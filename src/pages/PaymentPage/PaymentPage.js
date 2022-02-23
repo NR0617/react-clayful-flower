@@ -8,6 +8,14 @@ function PaymentPage() {
   const navigate = useNavigate();
   const [cart, setCart] = useState({});
   const [paymentMethods, setPaymentMethods] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("");
+  var options = {
+    customer: localStorage.getItem("accessToken"),
+  };
+  var Cart = clayful.Cart;
 
   const [recvUserInfo, setRecvUserInfo] = useState({
     mobile: "",
@@ -28,15 +36,6 @@ function PaymentPage() {
     country: "",
   });
 
-  const [show, setShow] = useState(false);
-
-  const [isChecked, setIsChecked] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("");
-  var options = {
-    customer: localStorage.getItem("accessToken"),
-  };
-  var Cart = clayful.Cart;
-
   useEffect(() => {
     getCartData();
     getPaymentData();
@@ -51,23 +50,48 @@ function PaymentPage() {
       if (err) {
         // Error case
         console.log(err.code);
-        // return;
+        return;
       }
 
-      var data = result.data;
+      let data = result.data;
       console.log('data2', data);
+      
       setPaymentMethods(data);
     });
   };
+  const handleCompletePostCode = (data) => {
+    let fullAddress = data.address;
+    let extraAddress = "";
 
+    if (data.addressType === "R") {
+      if (data.bname !== "") {
+        extraAddress += data.bname;
+      }
+      if (data.buildingName !== "") {
+        extraAddress +=
+          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+    }
+
+    handleClose();
+    setAddress((prevState) => ({
+      ...prevState,
+      postCode: data.zonecode,
+      state: data.sido,
+      city: data.sigungu,
+      address1: fullAddress,
+    }));
+  };
   const getCartData = () => {
     Cart.getForMe({}, options, function (err, result) {
       if (err) {
         // Error case
         console.log(err.code);
-        // return;
+        return;
       }
       var data = result.data;
+      console.log('data3', data);
       setCart(data.cart);
     });
   };
@@ -117,13 +141,12 @@ function PaymentPage() {
       if (err) {
         // Error case
         console.log(err.code);
-        // return;
+        return;
       }
 
       // var headers = result.headers;
       // var data = result.data;
       // console.log('data', data);
-
       let items = [];
 
       cart.items.map((item) => {
@@ -175,7 +198,7 @@ function PaymentPage() {
         if (err) {
           // Error case
           console.log(err.code);
-          // return;
+          return;
         }
 
         // var data = result.data;
@@ -185,7 +208,7 @@ function PaymentPage() {
           if (err) {
             // Error case
             console.log(err.code);
-            // return;
+            return;
           }
 
           var data = result.data;
@@ -198,30 +221,7 @@ function PaymentPage() {
     });
   };
 
-  const handleCompletePostCode = (data) => {
-    let fullAddress = data.address;
-    let extraAddress = "";
 
-    if (data.addressType === "R") {
-      if (data.bname !== "") {
-        extraAddress += data.bname;
-      }
-      if (data.buildingName !== "") {
-        extraAddress +=
-          extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
-      }
-      fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
-    }
-
-    handleClose();
-    setAddress((prevState) => ({
-      ...prevState,
-      postCode: data.zonecode,
-      state: data.sido,
-      city: data.sigungu,
-      address1: fullAddress,
-    }));
-  };
 
   const handleAddress2Change =(e) => {
     setAddress(prevState => ({
@@ -271,7 +271,7 @@ function PaymentPage() {
                 onChange={handleCheckboxClick}
                 checked={isChecked}
                 type="checkbox"
-                id="smaeInfo"
+                id="sameInfo"
                 name="sameInfo"
               />
               <label htmlFor="sameInfo">수취자 정보도 위와 동일합니다.</label>
@@ -326,7 +326,7 @@ function PaymentPage() {
               주문
             </button>
             {paymentMethod === "FBVFVDQXQTTM" && (
-              <p>계좌번호 : 1111-1111 클레이풀 은행</p>
+              <p>계좌번호 : 1111-1111 KK은행</p>
             )}
 
             <PostCodeModal

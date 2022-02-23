@@ -7,7 +7,7 @@ function PostCodeModal({ show, handleClose, handleCompletePostCode }) {
         <div>
         <Modal show={show} onHide={handleClose}>
             <Postcode
-            jsOptions={{ animation: true }}
+            // jsOptions={{ animation: true, hideMapBtn: true }}
             onSelected={(data) => handleCompletePostCode(data)}
             />
         </Modal>
