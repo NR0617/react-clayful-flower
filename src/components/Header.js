@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
 import logo2 from "../images/icons/logo2.png";
 import cart from "../images/icons/cart-sm.png";
 import "./Header.css";
 import { AuthContext } from "../context/AuthContext";
+
 function Header() {
     const { isAuth, isAuthenticated, signOut } = useContext(AuthContext);
 
@@ -28,15 +28,15 @@ function Header() {
                 {isAuth ? (
                     <>
                     <Nav.Link onClick={signOut}>Logout</Nav.Link>
-                    <Nav.Link href="/user/cart">
-                        <img src={cart} alt="cart" />
+                    <Nav.Link href="/user/cart">cart
+                        {/* <img src={cart} alt="cart" /> */}
                     </Nav.Link>
                     </>
                 ) : (
                     <>
                     <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/login">
-                        <img src={cart} alt="cart" />
+                    <Nav.Link href="/login">cart
+                        {/* <img src={cart} alt="cart" /> */}
                     </Nav.Link>
                     </>
                 )}
