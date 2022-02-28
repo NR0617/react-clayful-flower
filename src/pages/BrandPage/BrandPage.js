@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useRef, useEffect } from "react";
 import "./BrandPage.css";
 
+
 function BrandPage() {
-    // const Location=()=>{
 
-        useEffect(()=>{
-            var container = document.getElementById('map');
-            var options = {
-                center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
-                level: 3
-            };
+    
+    const options = {
+        //지도를 생성할 때 필요한 기본 옵션
+        center: new window.kakao.maps.LatLng(33.500685465347935, 126.52966788266464), //지도의 중심좌표.
+        level: 3, //지도의 레벨(확대, 축소 정도)
+    };
 
-            var map = new kakao.maps.Map(container, options);
-            var markerPosition  = new kakao.maps.LatLng(37.365264512305174, 127.10676860117488); 
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-            marker.setMap(map);
-        
-        }, [])
-        
+    const container = useRef(null); //지도를 담을 영역의 DOM 레퍼런스
+
+    useEffect(() => {
+        new window.kakao.maps.Map(container.current, options); //지도 생성 및 객체 리턴
+        return () => {};
+    }, []);
+
+
+
     return (
         
         <div className="pageWrapper">
@@ -28,10 +28,17 @@ function BrandPage() {
                 <h3>오늘의 꽃 디자인을 확인하세요</h3>
                 <br />
                 <h2>오시는 길</h2>
-                <div id="map" style={{width:"500px", height:"400px"}}></div> 
+                <div className="map-align">
+                    <div
+                        className="map"
+                        style={{ width: "500px", height: "500px",}}
+                        ref={container}
+                        >
+                    </div>
+                </div>
+                <p>T. 010-0000-0000</p>
             </div>
         </div>
-    
     )
 }
 

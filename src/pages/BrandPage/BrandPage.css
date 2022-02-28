@@ -17,3 +17,10 @@
     margin-bottom: 72px;
 
 }
+
+.map-align {
+    margin-top: 75px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
