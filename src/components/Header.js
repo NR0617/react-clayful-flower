@@ -28,15 +28,15 @@ function Header() {
                 {isAuth ? (
                     <>
                     <Nav.Link onClick={signOut}>Logout</Nav.Link>
-                    <Nav.Link href="/user/cart">cart
-                        {/* <img src={cart} alt="cart" /> */}
+                    <Nav.Link href="/user/cart">
+                        <img src={cart} alt="cart" />
                     </Nav.Link>
                     </>
                 ) : (
                     <>
                     <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/login">cart
-                        {/* <img src={cart} alt="cart" /> */}
+                    <Nav.Link href="/login">
+                        <img src={cart} alt="cart" />
                     </Nav.Link>
                     </>
                 )}
