@@ -8,6 +8,30 @@ function LandingPage() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+      const script = document.createElement('script');
+      script.async = true;
+      //에러처리
+      try {
+        if (window.Kakao) {
+          window.Kakao.init('1178b18d2db493fcd89f112f73986343');
+        }
+      } catch (e) {}
+      //Kakao chanel 추가 버튼 생성
+          window.Kakao.Channel.createChatButton({
+          container: '#kakao-talk-channel-chat-button',
+          channelPublicId: '710815', // 카카오톡 채널 홈 URL에 명시된 id로 설정합니다.
+          title: 'consult',
+          size: 'small',
+          color: 'yellow',
+          shape: 'pc',
+          supportMultipleDensities: true,
+      });
+      //Script사용을 위하여 추가
+      document.body.appendChild(script);
+      document.body.removeChild(script);
+  }, []);
+  
+  useEffect(() => {
     var options = {
       query: {
         page: 1,
@@ -46,6 +70,8 @@ function LandingPage() {
       <section className="welcome">
         {/* <h1></h1> */}
       </section>
+
+      <div className="chat_btn" id="kakao-talk-channel-chat-button"></div>
 
       <section className="product-grid">
         <div className="grid-container">

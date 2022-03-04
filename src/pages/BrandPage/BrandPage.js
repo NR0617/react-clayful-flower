@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, Component } from "react";
+import React, { useRef, useEffect } from "react";
 import "./BrandPage.css";
 import flower_01 from '../ProductListPage/ProductImage/basket-g88f898c39_1920(1).jpg';
 import flower_02 from '../ProductListPage/ProductImage/bouquet-g943fd25b1_1920(1).jpg';

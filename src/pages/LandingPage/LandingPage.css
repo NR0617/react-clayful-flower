@@ -8,6 +8,13 @@
     color: #86868b;
 }
 
+/* Kakao */
+.chat_btn {
+    position: fixed;
+    bottom: 30px;
+    right: 70px;
+}
+
   /* welcom */
 .welcome {
     margin-top: 72px;
