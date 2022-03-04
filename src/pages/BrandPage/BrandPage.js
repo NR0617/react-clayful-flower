@@ -27,21 +27,15 @@ function BrandPage() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 1400,
     }
 
 
     return (
         
         <div className="pageWrapper">
-            <section className="top-picture" />
+            {/* <section className="top-picture" /> */}
             <div className="title">
-                <div className="desc">
-                    <h3>매주 새롭게 바뀌는</h3>
-                    <br />
-                    <h3>오늘의 꽃 디자인을 확인하세요</h3>
-                    <br />
-                </div>
                 <Slider {...settings}>
                     <div className='container_item'>
                         <img src={flower_01} />
@@ -53,6 +47,12 @@ function BrandPage() {
                         <img src={flower_03} />
                     </div>
                 </Slider>
+                <div className="desc">
+                    <h3>매주 새롭게 바뀌는</h3>
+                    <br />
+                    <h3>오늘의 꽃 디자인을 확인하세요</h3>
+                    
+                </div>
                 <div className="text-margin">
                     <h2>오시는 길</h2>
                     <div className="map-align">

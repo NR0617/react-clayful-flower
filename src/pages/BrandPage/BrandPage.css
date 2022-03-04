@@ -1,25 +1,13 @@
-.top-picture {
-    margin-top: 72px;
-    width: 100%;
-    height: 500px;
-    background-image: url("../../images/home/flowerShop-full.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .title {
     text-align: center;
-    margin-top: 72px;
+    /* margin-top: 72px; */
     text-decoration: none;
     margin-bottom: 72px;
     border-color: white;
 }
 
 .desc {
-    margin: 0 0 75px 0;
+    margin: 100px 0 75px 0;
 }
 
 .map-align {
@@ -31,10 +19,9 @@
 
 .container_item {
     width: 100vw;
-
 }
 .container_item img {
-    width: 100%;
+    width: 60%;
 }
 
 .text-margin {

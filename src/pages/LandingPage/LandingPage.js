@@ -70,7 +70,7 @@ function LandingPage() {
           <div className="links-wrapper">
             <ul>
               <li>
-                <a href="/brand">둘러보기</a>
+                <a href="/brand">오시는 길</a>
               </li>
               {/* <li>
                 <a href="/">오시는 길</a>
