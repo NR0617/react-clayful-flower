@@ -177,10 +177,10 @@ function LandingPage() {
                     {/* <img src={series5} alt="apple" /> */}
                   </div>
                 </div>
-                <div className="description-wraper">
+                {/* <div className="description-wraper">
 
                   <br />
-                </div>
+                </div> */}
                 <div className="links-wrapper">
                   <ul>
                     {/* <li>
@@ -209,7 +209,7 @@ function LandingPage() {
                 </div>
                 <div className="description-wraper white">
                 </div>
-                <div className="links-wrapper">
+                {/* <div className="links-wrapper">
                   <ul>
                     {/* <li>
                       <a href="/">
@@ -219,8 +219,8 @@ function LandingPage() {
                     {/* <li>
                       <a href="/">Learn about Apple Arcade</a>
                     </li> */}
-                  </ul>
-                </div>
+                  {/* </ul>
+                </div> */}
               </div>
             </div>
             <div className="right-side-wrapper col-sm-12 col-md-6">
@@ -231,7 +231,7 @@ function LandingPage() {
                 <div className="description-wraper">
                   
                 </div>
-                <div className="links-wrapper">
+                {/* <div className="links-wrapper">
                   <ul>
                     {/* <li>
                       <a href="/">Learn more</a>
@@ -239,8 +239,8 @@ function LandingPage() {
                     <li>
                       <a href="/">Apply now</a>
                     </li> */}
-                  </ul>
-                </div>
+                  {/* </ul>
+                </div> */}
               </div>
             </div>
           </div>

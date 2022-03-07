@@ -11,7 +11,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import BrandPage from './pages/BrandPage/BrandPage';
-import ProductListPage from './pages/ProductListPage/ProductListPage';
+// import ProductListPage from './pages/ProductListPage/ProductListPage';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/brand" element={<BrandPage />} />
-        <Route path="/productlist" element={<ProductListPage />} />
+        {/* <Route path="/productlist" element={<ProductListPage />} /> */}
       </Routes>
     </AuthContextProvider>
   );

@@ -41,6 +41,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px 0;
+    overflow: scroll;
 }
 .product-grid h2 {
     font-size: 2rem;
@@ -52,11 +53,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
+
+
 }
 .grid-product {
     background: #f1f1f1;
