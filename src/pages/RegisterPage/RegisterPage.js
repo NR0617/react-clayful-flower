@@ -6,12 +6,18 @@ function RegisterPage() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [isValid, setIsValid] = useState(true);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     };
 
     const handlePasswordChange = (event) => {
+        if (event.target.value.length < 8) {
+            setIsValid(false);
+        } else {
+            setIsValid(true);
+        }
         setPassword(event.target.value);
     };
 
@@ -54,6 +60,7 @@ function RegisterPage() {
                         name="password"
                         value={password}
                     />
+                    {isValid ? null : <p>비밀번호는 8자리 이상 입력해주세요</p>}
 
                     <button type="submit">회원가입</button>
                     <Link
