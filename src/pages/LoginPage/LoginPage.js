@@ -52,14 +52,16 @@ function LoginPage() {
                 <form onSubmit={handleSubmit}>
                     <input
                         onChange={handleEmailChange}
-                        placeholder="Email"
+                        // placeholder="Email"
+                        placeholder="test@gmail.com"
                         type="email"
                         name="email"
                         value={email}
                     />
                     <input
                         onChange={handlePasswordChange}
-                        placeholder="암호"
+                        // placeholder="암호"
+                        placeholder="12345678"
                         type="password"
                         name="password"
                         value={password}
