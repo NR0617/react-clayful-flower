@@ -29,7 +29,7 @@ function Header() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="nav-justified w-100 nav-fill">
                             <Nav.Link href="/">Oneul</Nav.Link>
-                            <Nav.Link href="/brand">Shop</Nav.Link>
+                            <Nav.Link href="/brand">Brand</Nav.Link>
                             {isAuth ? (
                                 <>
                                     <Nav.Link onClick={signOut}>
